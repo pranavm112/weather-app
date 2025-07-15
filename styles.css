@@ -1,0 +1,260 @@
+ :root {
+      --primary-bg: #0f2027;
+      --secondary-bg: #203a43;
+      --highlight: #2c5364;
+      --glass-bg: rgba(255, 255, 255, 0.1);
+      --text-color: #ffffff;
+      --accent: #3f72af;
+      --tab-active: #4a90e2;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Merriweather Sans', sans-serif;
+      background-image: url("../assets/bg.png");
+      background-size: cover;
+      background-position: center;
+      color: var(--text-color);
+      min-height: 100vh;
+    }
+
+    .wrapper {
+      width: 100%;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .tab-container {
+      display: flex;
+      flex-wrap: wrap;
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .tab {
+      flex: 1;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .tab.current-tab {
+      background-color: var(--tab-active);
+      color: white;
+      font-weight: bold;
+      border-radius: 15px;
+      margin: 5px;
+    }
+
+    .weather-container {
+      width: 100%;
+      max-width: 700px;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .sub-container {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      background-image: linear-gradient(160deg, #112d4e 0%, #3f72af 100%);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .sub-container.active {
+      display: flex;
+    }
+
+    .form-container {
+      display: none;
+      width: 100%;
+      max-width: 550px;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .form-container.active {
+      display: flex;
+    }
+
+    input[data-searchInput] {
+      padding: 0.7rem 1rem;
+      border: none;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 400px;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+    }
+
+    input::placeholder {
+      color: rgba(255,255,255,0.6);
+    }
+
+    .btn {
+      background: var(--accent);
+      padding: 0.7rem 1.5rem;
+      border: none;
+      font-size: 1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      color: white;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #2c4e7e;
+    }
+
+    .user-info-container img[data-weatherIcon] {
+      width: 100px;
+      height: 100px;
+    }
+
+    .parameter-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .parameter {
+      flex: 1 1 30%;
+      min-width: 140px;
+      background: rgba(255,255,255,0.15); /* ⬅ increased opacity for better contrast */
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+      border: 2px solid rgba(255, 255, 255, 0.3); /* ⬅ more visible border */
+    }
+
+    .parameter img {
+      width: 100px;
+      height: 55px;
+      margin-bottom: 0.5rem;
+      filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.5)); /* ⬅ glow to improve icon visibility */
+    }
+
+    .name {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .name img {
+      width: 25;
+      height: 25px;
+    }
+@media (max-width: 1024px) {
+  .weather-container {
+    max-width: 90%;
+  }
+
+  .tab-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tab {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .parameter-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .parameter {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .sub-container {
+    padding: 1.5rem 1rem;
+  }
+
+  input[data-searchInput] {
+    width: 100%;
+    max-width: none;
+    font-size: 1rem;
+  }
+
+  .form-container {
+    padding: 0 1rem;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+
+  .user-info-container img[data-weatherIcon] {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .tab {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+
+  .parameter img {
+    width: 50px;
+    height: 40px;
+  }
+
+  .parameter p {
+    font-size: 0.95rem;
+  }
+
+  .name p, .name img {
+    font-size: 0.9rem;
+    width: 20px;
+    height: 20px;
+  }
+
+  .sub-container p {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+}
