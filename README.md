@@ -36,3 +36,22 @@ Weather_App/
    ```bash
    git clone https://github.com/pranavm112/Weather-App.git
    cd Weather-App
+   
+
+
+Create a config.js file in the root of the project:
+
+2. Create a config.js file in the root of the project:
+    const API_KEY = "your_openweather_api_key";
+
+3. Open index.html in your browser
+
+💡 Make sure you’re connected to the internet so external API and icons can load properly.
+
+
+🔐 Security
+config.js is included in .gitignore to protect your API key.
+
+Never share your actual API key in public repositories.
+
+
