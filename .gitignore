@@ -1,0 +1,2 @@
+# Ignore config containing private keys
+config.js

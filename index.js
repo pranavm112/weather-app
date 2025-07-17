@@ -10,7 +10,7 @@ const userInfoContainer = document.querySelector(".user-info-container");
 //initially vairables need????
 
 let oldTab = userTab;
-const API_KEY = "const API_KEY = "YOUR_OPENWEATHERMAP_API_KEY";
+
 oldTab.classList.add("current-tab");
 getfromSessionStorage();
 
